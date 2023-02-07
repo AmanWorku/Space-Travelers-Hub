@@ -61,6 +61,11 @@ ul li a {
   border: 2px solid #dfdfdf;
 }
 
+.button-status,
+.button-join {
+  width: 8em;
+}
+
 .status {
   background-color: #727272;
   border: none;
@@ -69,8 +74,8 @@ ul li a {
   color: #fff;
   font-size: 0.75rem;
   text-transform: uppercase;
-  margin-top: 35px;
-  margin-left: 20px;
+  text-align: center;
+  margin-top: 32%;
 }
 
 .join {
@@ -80,6 +85,5 @@ ul li a {
   padding: 0.4em;
   text-transform: capitalize;
   cursor: pointer;
-  width: 9rem;
-  margin-top: 25px;
+  margin-top: 25%;
 }

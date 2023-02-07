@@ -27,8 +27,8 @@ function Missions() {
               the King Bhumibol Adulyadej, as a symbol of the linkage between
               Thailand and modern communications technology.
             </td>
-            <td><button type="button" className="status">NOT A MEMBER</button></td>
-            <td><button type="button" className="join">Join Mission</button></td>
+            <td className="button-status"><button type="button" className="status">NOT A MEMBER</button></td>
+            <td className="button-join"><button type="button" className="join">Join Mission</button></td>
           </tr>
           <tr>
             <td>Telstar</td>
@@ -41,8 +41,8 @@ function Missions() {
               surpassing the previous record, set by TerreStar-1 (6,910 kg/15230lbs),
               launched by Ariane 5ECA on 1 July 2009.
             </td>
-            <td>Otto</td>
-            <td>@mdo</td>
+            <td className="buttons"><button type="button" className="status">NOT A MEMBER</button></td>
+            <td className="buttons"><button type="button" className="join">Join Mission</button></td>
           </tr>
           <tr>
             <td>Thaicom</td>
@@ -56,8 +56,8 @@ function Missions() {
               the King Bhumibol Adulyadej, as a symbol of the linkage between
               Thailand and modern communications technology.
             </td>
-            <td>Ottslkdfjlskjdlkjlkjlkjo</td>
-            <td>@mdo</td>
+            <td className="buttons"><button type="button" className="status">NOT A MEMBER</button></td>
+            <td className="buttons"><button type="button" className="join">Join Mission</button></td>
           </tr>
         </tbody>
       </Table>
