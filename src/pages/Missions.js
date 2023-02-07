@@ -13,8 +13,8 @@ function Missions() {
   const missions = useSelector((state) => state.missionsReducer);
   const renderMissions = (missionsData) => missionsData.map((mission) => (
     <Mission
-      key={mission.mission_id}
-      name={mission.mission_name}
+      key={mission.id}
+      name={mission.name}
       description={mission.description}
     />
   ));
@@ -30,7 +30,7 @@ function Missions() {
           </tr>
         </thead>
         <tbody>
-          <tr>{renderMissions(missions)}</tr>
+          {renderMissions(missions)}
         </tbody>
       </Table>
     </div>
