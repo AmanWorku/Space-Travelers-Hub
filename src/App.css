@@ -45,3 +45,8 @@ ul li a {
 .active {
   text-decoration: underline;
 }
+
+.table-container {
+  width: 95%;
+  margin-inline: auto;
+}
