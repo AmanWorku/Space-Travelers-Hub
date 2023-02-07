@@ -6,6 +6,7 @@ import missions from './missions/missions';
 const reducers = combineReducers({
   rocketsReducer: rockets,
   missionsReducer: missions,
+
 });
 
 const store = createStore(reducers, applyMiddleware(thunk));
