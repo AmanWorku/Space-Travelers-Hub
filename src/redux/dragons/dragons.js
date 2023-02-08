@@ -13,20 +13,24 @@ export const reserveDragon = createAction(RESERVE_DRAGONS, (id) => ({
   payload: id,
 }));
 
-export const retrieveDragons = createAsyncThunk(FETCH_DRAGONS, async () => {
-  const response = await fetchDragons();
-  const dragonsData = [];
-  response.forEach((dragon) => {
-    const aDragon = {
-      id: dragon.id,
-      name: dragon.name,
-      description: dragon.description,
-      image: dragon.flickr_images[0],
-      reserved: false,
-    };
-    dragonsData.push(aDragon);
-  });
-  return dragonsData;
+export const retrieveDragons = createAsyncThunk(FETCH_DRAGONS, async (obj, thunkAPI) => {
+  const currentState = thunkAPI.getState();
+  if (currentState.dragonsReducer.length === 0) {
+    const response = await fetchDragons();
+    const dragonsData = [];
+    response.forEach((dragon) => {
+      const aDragon = {
+        id: dragon.id,
+        name: dragon.name,
+        description: dragon.description,
+        image: dragon.flickr_images[0],
+        reserved: false,
+      };
+      dragonsData.push(aDragon);
+    });
+    return dragonsData;
+  }
+  return currentState.dragonsReducer;
 });
 
 const INITIAL_STATE = [];
