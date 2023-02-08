@@ -25,7 +25,6 @@ export const retrieveDragons = createAsyncThunk(FETCH_DRAGONS, async () => {
       reserved: false,
     };
     dragonsData.push(aDragon);
-    console.log(dragonsData);
   });
   return dragonsData;
 });
