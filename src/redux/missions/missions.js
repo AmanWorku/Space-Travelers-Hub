@@ -1,6 +1,7 @@
-import { createReducer, createAsyncThunk } from '@reduxjs/toolkit';
+import { createReducer, createAsyncThunk, createAction } from '@reduxjs/toolkit';
 
 const FETCH_MISSIONS = 'FETCH_MISSIONS';
+const JOIN_MISSION = 'JOIN_MISSION';
 const INITIAL_STATE = [];
 const fetchMissions = async () => {
   const data = await (await fetch('https://api.spacexdata.com/v3/missions')).json();
@@ -21,9 +22,16 @@ export const retriveMissions = createAsyncThunk(FETCH_MISSIONS, async () => {
   return missionData;
 });
 
+export const joinMission = createAction(JOIN_MISSION, (id) => ({
+  payload: id,
+}));
+
 const missions = createReducer(INITIAL_STATE, ((builder) => {
   builder
     .addCase(retriveMissions.fulfilled, ((state, action) => action.payload))
+    .addCase(joinMission.fulfilled, ((state, action) => state.map((mission) => (
+      mission.id === action.payload ? { ...mission, reserved: true } : mission
+    ))))
     .addDefaultCase(((state) => [...state]));
 }));
 
