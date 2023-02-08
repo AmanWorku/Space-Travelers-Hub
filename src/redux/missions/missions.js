@@ -31,7 +31,7 @@ const missions = createReducer(INITIAL_STATE, ((builder) => {
   builder
     .addCase(retriveMissions.fulfilled, ((state, action) => action.payload))
     .addCase(updateMission, ((state, action) => state.map((mission) => (
-      mission.mission_id === action.payload
+      mission.id === action.payload
         ? { ...mission, isReserved: !mission.isReserved }
         : mission
     ))))
