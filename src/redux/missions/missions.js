@@ -16,6 +16,7 @@ export const retriveMissions = createAsyncThunk(FETCH_MISSIONS, async () => {
       id: mission.mission_id,
       name: mission.mission_name,
       description: mission.description,
+      isReserved: false,
     };
     missionData.push(singleMission);
   });
