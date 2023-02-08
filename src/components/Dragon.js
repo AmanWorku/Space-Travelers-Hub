@@ -22,10 +22,11 @@ const Dragon = (props) => {
         <div className="col-md-8">
           <div className="card-body">
             <h5 className="card-title">{name}</h5>
+            {reserved && <div className="dragon--badge">RESERVED</div>}
             <p className="card-text">{description}</p>
             <button
               type="button"
-              className="btn btn-primary my-5"
+              className={reserved ? 'btn btn-danger' : 'btn btn-primary'}
               onClick={onReserve}
             >
               {reserved ? 'Cancel Reservation' : 'Reserve Dragon'}
