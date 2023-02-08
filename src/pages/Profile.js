@@ -2,19 +2,15 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 
 function Profile() {
-  const rockets = useSelector((state) => state.rocketsReducer);
-  const renderReserved = (rocketsInfo) => rocketsInfo.map((rocket) => {
-    if (rocket.reserved === true) {
-      return <li key={rocket.id} className="list-group-item">{rocket.name}</li>;
-    }
-    return null;
-  });
+  const reservedRockts = useSelector((state) => state.rocketsReducer.filter((rck) => rck.reserved));
 
   return (
     <div>
       <div className="container row col-6">
         <h3>My Rockets</h3>
-        <ul className="list-group">{renderReserved(rockets)}</ul>
+        <ul className="list-group">
+          {reservedRockts.length ? reservedRockts.map((rocket) => <li key={rocket.id} className="list-group-item">{rocket.name}</li>) : <li className="list-group-item">No Reserved Rockets</li> }
+        </ul>
       </div>
     </div>
   );
