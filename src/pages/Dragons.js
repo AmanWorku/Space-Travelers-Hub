@@ -13,9 +13,11 @@ function Dragons() {
   const renderDragons = (dragonsInfo) => dragonsInfo.map((dragon) => (
     <Dragon
       key={dragon.id}
+      id={dragon.id}
       description={dragon.description}
       name={dragon.name}
       image={dragon.image}
+      reserved={dragon.reserved}
     />
   ));
   return (

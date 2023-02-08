@@ -1,8 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { useDispatch } from 'react-redux';
+import { reserveDragon } from '../redux/dragons/dragons';
 
 const Dragon = (props) => {
-  const { name, description, image } = props;
+  const {
+    name, description, image, id, reserved,
+  } = props;
+
+  const dispatch = useDispatch();
+  const onReserve = () => {
+    dispatch(reserveDragon(id));
+  };
 
   return (
     <div className="card mb-3">
@@ -14,7 +23,13 @@ const Dragon = (props) => {
           <div className="card-body">
             <h5 className="card-title">{name}</h5>
             <p className="card-text">{description}</p>
-            <button type="button" className="btn btn-primary my-5">Reserve Dragon</button>
+            <button
+              type="button"
+              className="btn btn-primary my-5"
+              onClick={onReserve}
+            >
+              {reserved ? 'Cancel Reservation' : 'Reserve Dragon'}
+            </button>
           </div>
         </div>
       </div>
@@ -26,6 +41,8 @@ Dragon.propTypes = {
   name: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
   image: PropTypes.string.isRequired,
+  id: PropTypes.string.isRequired,
+  reserved: PropTypes.bool.isRequired,
 };
 
 export default Dragon;
