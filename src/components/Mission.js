@@ -19,7 +19,13 @@ const Mission = (props) => {
         <td>
           {description}
         </td>
-        <td className="button-status"><button type="button" className={isReserved ? 'active-button' : 'status'}>{isReserved ? 'Active Member' : 'NOT A MEMBER'}</button></td>
+        <td className="button-status">
+          <div
+            className={isReserved ? 'active-button' : 'status'}
+          >
+            {isReserved ? 'Active Member' : 'NOT A MEMBER'}
+          </div>
+        </td>
         <td className="button-join">
           <button
             type="button"
