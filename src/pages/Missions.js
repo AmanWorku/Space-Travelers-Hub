@@ -17,6 +17,7 @@ function Missions() {
       key={mission.id}
       name={mission.name}
       description={mission.description}
+      isReserved={mission.isReserved}
     />
   ));
   return (
