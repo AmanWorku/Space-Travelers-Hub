@@ -13,6 +13,7 @@ function Rockets() {
   const renderRockets = (rocketsInfo) => rocketsInfo.map((rckt) => (
     <Rocket
       key={rckt.id}
+      id={rckt.id}
       description={rckt.description}
       name={rckt.name}
       image={rckt.image}
