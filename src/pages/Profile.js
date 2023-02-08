@@ -5,7 +5,7 @@ function Profile() {
   const reservedRockts = useSelector((state) => state.rocketsReducer.filter((rck) => rck.reserved));
   const reservedDragons = useSelector((state) => state.dragonsReducer.filter((dr) => dr.reserved));
   const reservedMissions = useSelector((state) => state.missionsReducer
-    .filter((mis) => mis.reserved));
+    .filter((mis) => mis.isReserved));
 
   return (
     <div className="profile-section">
