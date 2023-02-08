@@ -17,8 +17,8 @@ const Mission = (props) => {
         <td>
           {description}
         </td>
-        <td className="button-status"><button type="button" onClick={handleJoining} className="status">NOT A MEMBER</button></td>
-        <td className="button-join"><button type="button" className="join">Join Mission</button></td>
+        <td className="button-status"><button type="button" className="status">NOT A MEMBER</button></td>
+        <td className="button-join"><button type="button" className="join" onClick={handleJoining}>Join Mission</button></td>
       </tr>
     </>
   );
