@@ -1,13 +1,13 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
-import { joinMission } from '../redux/missions/missions';
+import { updateMission } from '../redux/missions/missions';
 
 const Mission = (props) => {
   const { id, name, description } = props;
   const dispatch = useDispatch();
   const handleJoining = () => {
-    dispatch(joinMission(id));
+    dispatch(updateMission(id));
   };
 
   return (
